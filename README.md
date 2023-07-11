@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# Live Football World Cup Scoreboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a simple React application that shows all the ongoing matches and their scores.
 
-## Available Scripts
+## Application Features
 
-In the project directory, you can run:
+- Create a new match, assuming initial score 0 – 0 and adding it the scoreboard.
+- Update the scores for all matches in progress.
+- Finish a match currently in progress. This removes a match from the scoreboard.
+- Summary of matches in progress ordered by their total score. The matches with the
+  same total score will be returned ordered by the most recently started match in the scoreboard.
+- Simple match persistance in localStorage
+- Simple UI design utilizing BootStrap
 
-### `npm start`
+## Branches
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Main
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This branch is the final application
 
-### `npm test`
+### ?-start
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+These branches will be the starting point for features - they will include any tests that will initially fail
 
-### `npm run build`
+### ?-end
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+These branches will will contain the code for the feature - the tests will pass
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To install the project, follow these steps:
 
-### `npm run eject`
+Clone the repository:
+git clone https://github.com/southstandblue/world-cup-scores.git
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Change to the project directory:
+cd world-cup-scores
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Install dependencies:
+npm install
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Start the development server:
+npm start
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Open your browser and navigate to http://localhost:3000 to view the application.
