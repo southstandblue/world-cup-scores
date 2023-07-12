@@ -1,10 +1,10 @@
 import Container from "react-bootstrap/Container";
 
-const GameInProgress = () => {
+const GamesInProgressForm = () => {
   return (
     <Container>
       <h5>Games in Progress</h5>
     </Container>
   );
 };
-export default GameInProgress;
+export default GamesInProgressForm;
