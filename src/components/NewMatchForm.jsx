@@ -6,7 +6,7 @@ import Row from "react-bootstrap/Row";
 
 import { useState, useRef } from "react";
 
-const NewMatchForm = ({ persist }) => {
+const NewMatchForm = ({ persistMatch }) => {
   const [homeTeam, setHomeTeam] = useState("");
   const [awayTeam, setAwayTeam] = useState("");
   const [saveButtonDisabled, setSaveButtonDisabled] = useState(true);
@@ -53,7 +53,7 @@ const NewMatchForm = ({ persist }) => {
     };
 
     // Call parent function to presist the match details
-    persist(matchData);
+    persistMatch(matchData);
 
     // Clear input fields
     clearFields();
@@ -63,41 +63,38 @@ const NewMatchForm = ({ persist }) => {
   };
 
   return (
-    <Container>
-      <h5>New Match</h5>
-      <Form>
-        <Row>
-          <Col>
-            <Form.Control
-              type="text"
-              placeholder="Home Team"
-              ref={homeTeamInputRef}
-              value={homeTeam}
-              onChange={handleHomeTeam}
-              autoFocus
-            />
-          </Col>
-          <Col>
-            <Form.Control
-              type="text"
-              placeholder="Away Team"
-              value={awayTeam}
-              onChange={handleAwayTeam}
-            />
-          </Col>
-          <Col xs="auto">
-            <Button
-              onClick={handleSave}
-              disabled={saveButtonDisabled}
-              className="mb-2"
-              data-testid="startMatchButton"
-            >
-              Start Match
-            </Button>
-          </Col>
-        </Row>
-      </Form>
-    </Container>
+    <Form>
+      <Row>
+        <Col>
+          <Form.Control
+            type="text"
+            placeholder="Home Team"
+            ref={homeTeamInputRef}
+            value={homeTeam}
+            onChange={handleHomeTeam}
+            autoFocus
+          />
+        </Col>
+        <Col>
+          <Form.Control
+            type="text"
+            placeholder="Away Team"
+            value={awayTeam}
+            onChange={handleAwayTeam}
+          />
+        </Col>
+        <Col xs="auto">
+          <Button
+            onClick={handleSave}
+            disabled={saveButtonDisabled}
+            className="mb-2"
+            data-testid="startMatchButton"
+          >
+            Start Match
+          </Button>
+        </Col>
+      </Row>
+    </Form>
   );
 };
 export default NewMatchForm;

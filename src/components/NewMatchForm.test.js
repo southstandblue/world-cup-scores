@@ -2,11 +2,6 @@ import { render, screen } from "@testing-library/react";
 import NewMatchForm from "./NewMatchForm";
 
 describe("Test the New Match Form", () => {
-  test("NewMatchForm renders the New Match Sub-Heading in the document", () => {
-    render(<NewMatchForm />);
-    const headingText = screen.getByText(/New Match/i);
-    expect(headingText).toBeInTheDocument();
-  });
   test("NewMatchForm renders the Home Team Input field in the document", () => {
     render(<NewMatchForm />);
     const homeTeamInput = screen.getByPlaceholderText("Home Team");

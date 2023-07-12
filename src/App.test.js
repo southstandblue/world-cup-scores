@@ -7,14 +7,19 @@ describe("Test the initial screen rendering of the application", () => {
     const headingText = screen.getByText(/Live Football World Cup Scoreboard/i);
     expect(headingText).toBeInTheDocument();
   });
-  test("App renders the Games in Progress Sub-Heading in the document", () => {
+  test("NewMatchForm renders the New Match Sub-Heading in the document", () => {
     render(<App />);
-    const subHeadingText = screen.getByText(/Games in Progress/i);
+    const subHeadingText = screen.getByText(/New Match/i);
     expect(subHeadingText).toBeInTheDocument();
   });
-  test("App renders the Game Summary Sub-Heading in the document", () => {
+  test("App renders the Matches in Progress Sub-Heading in the document", () => {
     render(<App />);
-    const subHeadingText = screen.getByText(/Game Summary/i);
+    const subHeadingText = screen.getByText(/Matches in Progress/i);
+    expect(subHeadingText).toBeInTheDocument();
+  });
+  test("App renders the Match Summary Sub-Heading in the document", () => {
+    render(<App />);
+    const subHeadingText = screen.getByText(/Matches Summary/i);
     expect(subHeadingText).toBeInTheDocument();
   });
 });
