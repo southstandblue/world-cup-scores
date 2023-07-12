@@ -31,15 +31,19 @@ These branches will will contain the code for the feature - the tests will pass
 To install the project, follow these steps:
 
 Clone the repository:
-git clone https://github.com/southstandblue/world-cup-scores.git
+
+`git clone https://github.com/southstandblue/world-cup-scores.git`
 
 Change to the project directory:
-cd world-cup-scores
+
+`cd world-cup-scores`
 
 Install dependencies:
-npm install
+
+`npm install`
 
 Start the development server:
-npm start
+
+`npm start`
 
 Open your browser and navigate to http://localhost:3000 to view the application.

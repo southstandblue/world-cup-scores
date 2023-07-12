@@ -1,10 +1,10 @@
 import Container from "react-bootstrap/Container";
 
-const GamesSummary = () => {
+const NewMatchForm = () => {
   return (
     <Container>
-      <h5>Game Summary</h5>
+      <h5>New Match</h5>
     </Container>
   );
 };
-export default GamesSummary;
+export default NewMatchForm;

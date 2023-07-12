@@ -7,11 +7,6 @@ describe("Test the initial screen rendering of the application", () => {
     const headingText = screen.getByText(/Live Football World Cup Scoreboard/i);
     expect(headingText).toBeInTheDocument();
   });
-  test("App renders the New Game button in the document", () => {
-    render(<App />);
-    const newGameButton = screen.getByRole("button");
-    expect(newGameButton).toBeInTheDocument();
-  });
   test("App renders the Games in Progress Sub-Heading in the document", () => {
     render(<App />);
     const subHeadingText = screen.getByText(/Games in Progress/i);

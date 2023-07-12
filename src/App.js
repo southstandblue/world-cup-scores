@@ -1,12 +1,14 @@
 import "./App.css";
-import Navbar from "./components/Navbar";
+import NavigationBar from "./components/NavigationBar";
 import GamesInProgress from "./components/GamesInProgress";
 import GamesSummary from "./components/GamesSummary";
+import NewMatchForm from "./components/NewMatchForm";
 
 const App = () => {
   return (
-    <div className="App">
-      <Navbar />
+    <div>
+      <NavigationBar />
+      <NewMatchForm />
       <GamesInProgress />
       <GamesSummary />
     </div>

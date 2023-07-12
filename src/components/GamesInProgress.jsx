@@ -1,8 +1,10 @@
+import Container from "react-bootstrap/Container";
+
 const GameInProgress = () => {
   return (
-    <div>
-      <h2>Games in Progress</h2>
-    </div>
+    <Container>
+      <h5>Games in Progress</h5>
+    </Container>
   );
 };
 export default GameInProgress;
