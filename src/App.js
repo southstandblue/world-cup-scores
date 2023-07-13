@@ -1,4 +1,3 @@
-import "./App.css";
 import NavigationBar from "./components/NavigationBar";
 import MatchesInProgressForm from "./components/MatchesInProgressForm";
 import MatchesSummary from "./components/MatchesSummary";
@@ -60,15 +59,50 @@ const App = () => {
     });
   };
 
+  // Display the Matches Summary
+  const displayMatchesSummary = () => {
+    // Here we need to sort the Summary
+    // 1. By the total score
+    // 2. If total score is the same then sort by recently started
+    const sortedMatches = [...matches].sort((a, b) => {
+      const checkTotalScoreA = parseInt(a.homeScore) + parseInt(a.awayScore);
+      const checkTotalScoreB = parseInt(b.homeScore) + parseInt(b.awayScore);
+      const checkIdA = a.id;
+      const checkIdB = b.id;
+
+      if (checkTotalScoreA === checkTotalScoreB) {
+        return checkIdA - checkIdB;
+      }
+
+      return checkTotalScoreB - checkTotalScoreA;
+    });
+
+    return sortedMatches.map((match) => {
+      return <MatchesSummary key={match.id} match={match} />;
+    });
+  };
+
   return (
     <Container>
       <NavigationBar />
       <h5>New Match</h5>
       {displayNewMatchForm()}
       <h5>Matches in Progress</h5>
-      {displayMatchesInProgress()}
+      {matches.length !== 0 ? (
+        displayMatchesInProgress()
+      ) : (
+        <>
+          <i>No matches have been started...</i>
+          <br />
+          <br />
+        </>
+      )}
       <h5>Matches Summary</h5>
-      <MatchesSummary />
+      {matches.length !== 0 ? (
+        displayMatchesSummary()
+      ) : (
+        <i>No matches have been started...</i>
+      )}
     </Container>
   );
 };
