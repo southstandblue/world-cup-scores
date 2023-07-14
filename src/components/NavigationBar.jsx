@@ -1,15 +1,16 @@
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import brandImage from "../img/brand.png";
+import pdfFile from "../pdf/LiveWorldCupFootballScores.pdf";
 
 const NavigationBar = (props) => {
   return (
     <>
       <Navbar expand="lg" fixed="top" bg="light" data-bs-theme="light">
         <Container>
-          <Navbar.Brand href="/">
+          <Navbar.Brand href={pdfFile} target="_blank" alt="User Guide">
             <img
-              alt="brandimage"
+              alt="User Guide"
               src={brandImage}
               width="30"
               height="30"

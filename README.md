@@ -9,8 +9,9 @@ This project is a simple React application that shows all the ongoing matches an
 - Finish a match currently in progress. This removes a match from the scoreboard.
 - Summary of matches in progress ordered by their total score. The matches with the
   same total score will be returned ordered by the most recently started match in the scoreboard.
-- Simple match persistance in localStorage
-- Simple UI design utilizing BootStrap
+- Simple match persistance in localStorage.
+- Simple UI design utilizing BootStrap.
+- User Guide supplied by clicking on the 'Live Football World Cup Scoreboard' text.
 
 ## Branches
 
@@ -47,3 +48,9 @@ Start the development server:
 `npm start`
 
 Open your browser and navigate to http://localhost:3000 to view the application.
+
+To run the tests for the project, use the following command:
+
+`npm test`
+
+This will run the test suite and display the test results in the terminal.

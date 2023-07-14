@@ -18,11 +18,15 @@ const App = () => {
   };
 
   const updateMatchScore = (matchId, homeScore, awayScore) => {
-    var matchTotalScore = parseInt(homeScore) + parseInt(awayScore);
     setMatches((prevMatches) =>
       prevMatches.map((match) =>
         match.id === matchId
-          ? { ...match, homeScore, awayScore, totalScore: matchTotalScore }
+          ? {
+              ...match,
+              homeScore: parseInt(homeScore),
+              awayScore: parseInt(awayScore),
+              totalScore: parseInt(homeScore) + parseInt(awayScore),
+            }
           : match
       )
     );
@@ -65,13 +69,21 @@ const App = () => {
     // 1. By the total score
     // 2. If total score is the same then sort by recently started
     const sortedMatches = [...matches].sort((a, b) => {
-      const checkTotalScoreA = parseInt(a.homeScore) + parseInt(a.awayScore);
-      const checkTotalScoreB = parseInt(b.homeScore) + parseInt(b.awayScore);
+      const checkTotalScoreA = a.totalScore;
+      const checkTotalScoreB = b.totalScore;
       const checkIdA = a.id;
       const checkIdB = b.id;
 
-      if (checkTotalScoreA === checkTotalScoreB) {
+      if (
+        checkTotalScoreA === checkTotalScoreB &&
+        checkTotalScoreA === 0 &&
+        checkTotalScoreB === 0
+      ) {
         return checkIdA - checkIdB;
+      }
+
+      if (checkTotalScoreA === checkTotalScoreB) {
+        return checkIdB - checkIdA;
       }
 
       return checkTotalScoreB - checkTotalScoreA;
@@ -92,7 +104,9 @@ const App = () => {
         displayMatchesInProgress()
       ) : (
         <>
-          <i>No matches have been started...</i>
+          <i data-testid="inProgressNoMatchesText">
+            No matches have been started...
+          </i>
           <br />
           <br />
         </>
@@ -101,7 +115,9 @@ const App = () => {
       {matches.length !== 0 ? (
         displayMatchesSummary()
       ) : (
-        <i>No matches have been started...</i>
+        <i data-testid="summaryNoMatchesText">
+          No matches have been started...
+        </i>
       )}
     </Container>
   );
